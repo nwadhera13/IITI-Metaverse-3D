@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b43be7ae65ed5044ae09ded45b9b85d
+guid: 7e7c819393809cb4a9e5c4cceb4bda63
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bark
-    second: {fileID: 2100000, guid: e5075b61e1f5f694b9eac418c1d9b382, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: grey
-    second: {fileID: 2100000, guid: e5075b61e1f5f694b9eac418c1d9b382, type: 2}
+      name: grass
+    second: {fileID: 2100000, guid: af397d5e35f456540a2c143d0b0389a0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
