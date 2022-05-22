@@ -7,9 +7,11 @@ public class movement : MonoBehaviour
     [SerializeField]float moveSpeed =4.0f;
     Vector3 forward,right;
     public Joystick joystick;
+    public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        rb=GetComponent<Rigidbody>();
         forward=Camera.main.transform.forward;
         forward.y=0;
         forward= Vector3.Normalize(forward);
@@ -33,6 +35,5 @@ public class movement : MonoBehaviour
         transform.forward+=heading;
         transform.position+=rightMovement;
         transform.position+=upMovement;
-                
     }
 }
