@@ -33,6 +33,6 @@ public class movement : MonoBehaviour
         transform.forward+=heading;
         transform.position+=rightMovement;
         transform.position+=upMovement;
-        
+                
     }
 }
