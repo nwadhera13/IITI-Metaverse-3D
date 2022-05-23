@@ -314,8 +314,9 @@ GameObject:
   - component: {fileID: 774966833}
   - component: {fileID: 774966832}
   - component: {fileID: 774966831}
+  - component: {fileID: 774966835}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Base
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,12 +427,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774966830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.54, z: 0}
+  m_LocalPosition: {x: 0, y: -2.61, z: 0}
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774966835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774966830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21a08fba0216b9499da108b5eaae004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 1
 --- !u!1 &870790512
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,8 +912,8 @@ GameObject:
   - component: {fileID: 1786370870}
   - component: {fileID: 1786370866}
   m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -981,7 +995,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 06065760c820f7941bd970318d21d186, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.42233124, g: 1, b: 0.16509432, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -999,7 +1013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786370865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.88, y: 0, z: 0}
+  m_LocalPosition: {x: -6.88, y: 0.13, z: 0}
   m_LocalScale: {x: 1, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1020,6 +1034,7 @@ MonoBehaviour:
   speed: {x: 10, y: 1}
   rb: {fileID: 1786370867}
   joystick: {fileID: 1234501399}
+  baseScript: {fileID: 774966835}
 --- !u!1 &1945108791
 GameObject:
   m_ObjectHideFlags: 0
