@@ -8,7 +8,7 @@ public Rigidbody2D rb;
 private Vector2 movement = new Vector2(1,1);
 public Joystick joystick;
 public baseScript baseScript;
-
+public float jumpheight;
 // Use this for initialization
 void Start () {
    rb=GetComponent<Rigidbody2D>();
@@ -31,8 +31,7 @@ void FixedUpdate()
 
 public void jump(){
         if(baseScript.isGrounded){
-            transform.Translate(Vector3.up * 260 * Time.deltaTime, Space.World);
-        }
-        
+            rb.AddForce(Vector2.up*jumpheight,ForceMode2D.Impulse);
+        }       
 }
 }
