@@ -4,6 +4,7 @@ using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayFabManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayFabManager : MonoBehaviour
     public InputField PasswordInput;
 
     public void RegisterButton(){
-        if(PasswordInput.text.Length>6){
+        if(PasswordInput.text.Length<6){
             messagetext.text="Password to short";
             return;
         }
@@ -30,16 +31,25 @@ public class PlayFabManager : MonoBehaviour
     {
       messagetext.text="Logged in";
       Debug.Log("Successful Login/Account create");
+      SceneManager.LoadScene("SampleScene");
     }
 
     void OnRegisterSuccess(RegisterPlayFabUserResult result){
       messagetext.text="Registered and Logged in";
     }
+    public void ResetPasswordButton(){
+        var request=new SendAccountRecoveryEmailRequest{Email=EmailInput.text,TitleId="5E6AA"};
+        PlayFabClientAPI.SendAccountRecoveryEmail(request ,OnPasswordReset,OnError);
+    }
+    void OnPasswordReset(SendAccountRecoveryEmailResult result)
+    {
+        messagetext.text="Password reset mail sent";
+    }
     
     // Start is called before the first frame update
     void Start()
     {
-        login();
+        //login();
     }
 
     void login(){
