@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PlayFab;
@@ -84,4 +84,5 @@ public class PlayFabManager : MonoBehaviour
     }*/
     //in game manager-->playfabmangaer.sendleaderboard()-->to recieve leaderboard data
     //leaderboard part isnot complete******
+    //test checking
 }
