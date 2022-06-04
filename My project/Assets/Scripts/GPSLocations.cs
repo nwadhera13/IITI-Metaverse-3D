@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class GPSLocation : MonoBehaviour
+public class GPSLocations : MonoBehaviour
 {
     //UI Text to show GPS values
     public Text GPSStatus;
