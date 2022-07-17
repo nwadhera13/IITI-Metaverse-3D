@@ -34,6 +34,7 @@ public class movement : MonoBehaviour
         Vector3 heading= Vector3.Normalize(rightMovement+upMovement);
         transform.forward+=heading;
         transform.position+=rightMovement;
-        transform.position+=upMovement;
+        transform.position += upMovement;
+
     }
 }
