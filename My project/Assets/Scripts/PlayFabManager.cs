@@ -10,12 +10,13 @@ public class PlayFabManager : MonoBehaviour
 {
     [Header("UI")]
     public Text messagetext;
+    static public string emaut;
     public InputField EmailInput;
     public InputField PasswordInput;
 
     public void RegisterButton(){
         if(PasswordInput.text.Length<6){
-            messagetext.text="Password to short";
+            messagetext.text="Password too short";
             return;
         }
         var request=new RegisterPlayFabUserRequest{Email=EmailInput.text,Password=PasswordInput.text,RequireBothUsernameAndEmail=false};
@@ -24,6 +25,8 @@ public class PlayFabManager : MonoBehaviour
 
     public void LoginButton(){
         var request=new LoginWithEmailAddressRequest{Email=EmailInput.text,Password=PasswordInput.text};
+        emaut = EmailInput.text;
+        Debug.Log(emaut);
         PlayFabClientAPI.LoginWithEmailAddress(request,onloginSuccess,OnError);
     }
 
@@ -65,6 +68,22 @@ public class PlayFabManager : MonoBehaviour
       Debug.Log("Error while logging in/creating account");
       Debug.Log(error.GenerateErrorReport());
     }
+
+    /*public void display()
+    {
+        PlayFabClientAPI.LoginWithPlayFab(new PlayFab.ClientModels.LoginWithPlayFabRequest
+            {
+            Username = "",
+            Password = ""
+        }, result =>
+        {
+            var displayName = result.InfoResultPayload.PlayerProfile.Email;
+            Debug.Log(displayName);
+        }, error =>
+        {
+            Debug.Log("No UserName");
+        });
+    }*/
 
     //*************LEADERBOARD**********
     /*public void SendLeaderboard(int score){

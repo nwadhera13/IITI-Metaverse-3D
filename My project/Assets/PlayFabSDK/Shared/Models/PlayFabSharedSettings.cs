@@ -6,7 +6,7 @@ using PlayFab;
 #endif
 public class PlayFabSharedSettings : ScriptableObject
 {
-    public string TitleId;
+    public string TitleId= "5E6AA";
 
     internal string VerticalName = null;
 #if ENABLE_PLAYFABSERVER_API || ENABLE_PLAYFABADMIN_API || UNITY_EDITOR
