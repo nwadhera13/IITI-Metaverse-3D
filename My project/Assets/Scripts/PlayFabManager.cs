@@ -15,7 +15,7 @@ public class PlayFabManager : MonoBehaviour
 
     public void RegisterButton(){
         if(PasswordInput.text.Length<6){
-            messagetext.text="Password to short";
+            messagetext.text="Password too short";
             return;
         }
         var request=new RegisterPlayFabUserRequest{Email=EmailInput.text,Password=PasswordInput.text,RequireBothUsernameAndEmail=false};
@@ -52,7 +52,7 @@ public class PlayFabManager : MonoBehaviour
         //login();
     }
 
-    void login(){
+    public void login(){
         var request=new LoginWithCustomIDRequest{CustomId=SystemInfo.deviceUniqueIdentifier,CreateAccount=true};
         PlayFabClientAPI.LoginWithCustomID(request,OnSuccess,OnError);
     }
@@ -67,11 +67,11 @@ public class PlayFabManager : MonoBehaviour
     }
 
     //*************LEADERBOARD**********
-    /*public void SendLeaderboard(int score){
+    public void SendLeaderboard(int score){
         var request=new UpdatePlayerStatisticsRequest{
             Statistics=new List<StatisticUpdate>{
                 new StatisticUpdate{
-                    StatisticName="GameCompleted", Value=score
+                    StatisticName="FrescoLeaderboard", Value=score
                     }
         }
         };
@@ -81,7 +81,7 @@ public class PlayFabManager : MonoBehaviour
     void OnLeaderBoardUpdate(UpdatePlayerStatisticsResult result)
     {
         Debug.Log("Successful leaderboard sent");
-    }*/
+    }
     //in game manager-->playfabmangaer.sendleaderboard()-->to recieve leaderboard data
     //leaderboard part isnot complete******
     //test checking
