@@ -44,11 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 5004065291926009310, guid: 432cb736f7d2f3647851a85ed22a94a6, type: 3}
-  spawntime: 2.5
-  spawnerLife: 12
+  spawntime: 2
+  spawnerLife: 15
   items:
   - {fileID: 5004065291926009310, guid: 9c620d40ad0c9d940ac87675c12f58aa, type: 3}
   - {fileID: 5004065291926009310, guid: 4ff0bc1ceded7254391032e508d8e964, type: 3}
   - {fileID: 5004065291926009310, guid: 158012ad1a2403f4dab532c654e7c6db, type: 3}
   - {fileID: 5004065291926009310, guid: 432cb736f7d2f3647851a85ed22a94a6, type: 3}
   - {fileID: 5004065291926009310, guid: 4e5f217c5fdbc804d971e9c75be8a316, type: 3}
+  - {fileID: 5004065291926009310, guid: a95de13f27c63e74d8c7aa5fd217f947, type: 3}

@@ -65,10 +65,12 @@ public class gameScript : MonoBehaviour
     public void gameOver(){
         Debug.Log("Game Over");
         playfabmanager.SendLeaderboard(score);
+        playfabmanager.GetLeaderboard();
         IsStarted =false;
         IsGameOver= true;
         audiomanager.PlaySound("pop");
         finalScore.text = score.ToString();
+        
         complete.SetActive(true);
         Time.timeScale = 0f;
     }

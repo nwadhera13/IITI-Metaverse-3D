@@ -33,6 +33,8 @@ public class spawnitems : MonoBehaviour
             r=2;
         }else if(59<y && y< 65){
             r=4;
+        }else if(64<y && y< 80){
+            r=5;
         }else{
             r=3;
         }

@@ -5,14 +5,17 @@ using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class PlayFabManager : MonoBehaviour
 {
     [Header("UI")]
     public Text messagetext;
     public InputField EmailInput;
     public InputField PasswordInput;
-
+    
+    public TMP_Text[] playerNames;
+    public TMP_Text[] playerScores;
+    
     public void RegisterButton(){
         if(PasswordInput.text.Length<6){
             messagetext.text="Password too short";
@@ -82,7 +85,22 @@ public class PlayFabManager : MonoBehaviour
     {
         Debug.Log("Successful leaderboard sent");
     }
-    //in game manager-->playfabmangaer.sendleaderboard()-->to recieve leaderboard data
-    //leaderboard part isnot complete******
-    //test checking
+    public void GetLeaderboard(){
+        var request = new GetLeaderboardRequest{
+            StatisticName = "FrescoLeaderboard",
+            StartPosition = 0,
+            MaxResultsCount = 5
+        };
+        PlayFabClientAPI.GetLeaderboard(request,OnLeaderBoardGet,OnError);
+
+    }
+    void OnLeaderBoardGet(GetLeaderboardResult result){
+        int i = 0;
+        foreach (var item in result.Leaderboard){
+            Debug.Log(item.Position + " " +  item.PlayFabId + " " + item.StatValue);
+            playerNames[i].text = item.PlayFabId;
+            playerScores[i].text = item.StatValue.ToString();
+            i++;
+        }
+    }
 }
