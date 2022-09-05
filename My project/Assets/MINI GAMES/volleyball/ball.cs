@@ -23,5 +23,13 @@ public class ball : MonoBehaviour
       var speed=lastvelocity.magnitude;
       var direction=Vector3.Reflect(lastvelocity.normalized,coll.contacts[0].normal);
       rb.velocity=direction*Mathf.Max(speed,0f);
+        if (coll.gameObject.tag == "baseA")
+        {
+            score.bscore++;
+        }
+        if (coll.gameObject.tag == "baseB")
+        {
+            score.ascore++;
+        }
     }
 }
