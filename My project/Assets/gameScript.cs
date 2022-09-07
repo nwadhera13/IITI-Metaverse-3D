@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System;
+using UnityEngine. SceneManagement;
 
 public class gameScript : MonoBehaviour
 {
@@ -73,6 +74,7 @@ public class gameScript : MonoBehaviour
         
         complete.SetActive(true);
         Time.timeScale = 0f;
+        SceneManager.LoadScene("SampleScene");
     }
     IEnumerator StartingAnim(){
         if(GameIsStarting){
