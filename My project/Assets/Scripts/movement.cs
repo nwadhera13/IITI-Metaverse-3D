@@ -11,6 +11,7 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rb=GetComponent<Rigidbody>();
         forward=Camera.main.transform.forward;
         forward.y=0;
