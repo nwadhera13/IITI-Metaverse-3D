@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - baseA
-  - baseB
+  - item
+  - player
+  - scoretext
+  - striketext
+  - gameManager
+  - Background
   layers:
   - Default
   - TransparentFX
@@ -15,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Minimap Only
+  - 
+  - 
   - 
   - 
   - 
@@ -42,10 +46,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Drop
-    uniqueID: 4191570121
-    locked: 0
-  - name: Menu
-    uniqueID: 3494122009
     locked: 0
