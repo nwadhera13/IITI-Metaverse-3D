@@ -74,7 +74,6 @@ public class gameScript : MonoBehaviour
         
         complete.SetActive(true);
         Time.timeScale = 0f;
-        SceneManager.LoadScene("SampleScene");
     }
     IEnumerator StartingAnim(){
         if(GameIsStarting){
