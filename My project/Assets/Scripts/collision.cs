@@ -19,7 +19,12 @@ public class collision : MonoBehaviour
     
     {
         if (collision.gameObject.tag == "player" ) {
+        if(gameObject.name == "VaccineGame"){
+            SceneManager.LoadScene("Vaccine");
+        }else{
             SceneManager.LoadScene("fresco_game");
+        }
+            
     }
     }
 }
