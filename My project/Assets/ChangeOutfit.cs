@@ -6,11 +6,12 @@ public class ChangeOutfit : MonoBehaviour
 {
     public LayerMask playerLayer;
     public GameObject player;
-    public GameObject outfitText;
     public GameObject canvas;
     public Material skaterOutfit;
     public Material cyborgOutfit;
     public Material oldOutfit;
+    
+    public bool check=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,33 +23,36 @@ public class ChangeOutfit : MonoBehaviour
     {
         if (Physics.OverlapSphere(transform.position, 2f, playerLayer).Length == 1)
         {
-            outfitText.SetActive(true);
+            check=true;
         }
         else
         {
-            outfitText.SetActive(false);
+            check=false;
         }
-        if (outfitText.activeInHierarchy == true)
+        if (check == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                canvas.SetActive(true);
-            }
+          canvas.SetActive(true);
         }
     }
     public void OutfitToSkate()
     {
         player.GetComponent<SkinnedMeshRenderer>().material = skaterOutfit;
+        check=false;
         canvas.SetActive(false);
+        transform.position=new Vector3(12.75f,0.63f,20.52f);
     }
     public void OutfitToOld()
     {
         player.GetComponent<SkinnedMeshRenderer>().material = oldOutfit;
+        check=false;
         canvas.SetActive(false);
+        transform.position=new Vector3(12.75f,0.63f,20.52f);
     }
     public void OutfitToCyborg()
     {
         player.GetComponent<SkinnedMeshRenderer>().material = cyborgOutfit;
+        check=false;
         canvas.SetActive(false);
+        transform.position=new Vector3(12.75f,0.63f,20.52f);
     }
 }
